@@ -28,7 +28,7 @@ jobs:
           ${{ secrets.GITHUB_TOKEN }}
         # ID or filename of the workflow
         workflow_id:
-          maven.yml
+          'maven.yml'
 
     - uses: actions/checkout@v4
     - name: Set up JDK 17
