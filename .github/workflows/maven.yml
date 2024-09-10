@@ -18,14 +18,11 @@ on:
 jobs:
 
           
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: PatrikValkovic/last-successful-commit-action@v3.1
     - name: Last successful commit
+      uses: PatrikValkovic/last-successful-commit-action@v3.1
       with:
         github_token:
           ${{ secrets.GITHUB_TOKEN }}
@@ -41,6 +38,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B test --file pom.xml
+      run: mvn -B test -Dspring.modulith.test.file-modification-detector=${{ steps.last_successful_commit.outputs.commit_hash }} --file pom.xml 
 
 
