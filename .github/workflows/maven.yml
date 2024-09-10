@@ -25,6 +25,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Derive appropriate SHAs for base and head
+      id: setSHAs
       uses: nrwl/nx-set-shas@v4
      
 
