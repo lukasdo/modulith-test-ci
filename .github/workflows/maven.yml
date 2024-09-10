@@ -36,6 +36,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B test -Dspring.modulith.test.file-modification-detector=${{ steps.setSHAs.outputs.base }} --file pom.xml 
+      run: mvn -B test -Dspring.modulith.test.reference-commit=${{ steps.setSHAs.outputs.base }} --file pom.xml 
 
 
